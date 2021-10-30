@@ -1,5 +1,7 @@
 #lang racket
 
+;; Define some exercises
+
 (define (slow-scale)
   "Slow scales")
 
@@ -15,6 +17,9 @@
 (define (warm-up)
   "Warm-up")
 
+
+;; Create a session 
+
 (define (session n)
   (let* ([exercises (list
                      slow-scale
@@ -25,12 +30,11 @@
                                (gen-exercise)))])
      (list (tune) (warm-up) (random-exercise))))
 
+
+;; Create a series of sessions
+
 (define (build-sessions n)
   (let ([indices (range n)])
     (map session indices)))
-
-
-
-
 
   
